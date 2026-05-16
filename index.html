@@ -534,11 +534,11 @@
         <!-- Download Section -->
         <div class="download-section">
             <div class="download-card">
-                <div class="download-icon"><i class="fas fa-file-word"></i></div>
-                <h3>Complete Lab Report</h3>
-                <p>Download the full DOCX report with all 20 programs, algorithms, flowcharts, and analysis. Ready to submit!</p>
-                <button class="download-btn" onclick="downloadDocx()">
-                    <i class="fas fa-download"></i> Download Report (DOCX)
+                <div class="download-icon"><i class="fas fa-file-archive"></i></div>
+                <h3>Complete Lab Report (ZIP)</h3>
+                <p>Download the full ZIP package containing the lab report, source codes, flowcharts and analysis. Ready to submit!</p>
+                <button class="download-btn" onclick="downloadZipReport()">
+                    <i class="fas fa-download"></i> Download Report (ZIP)
                 </button>
             </div>
             <div class="download-card">
@@ -745,8 +745,6 @@
         }
         
         function viewCode(num) {
-            // In a real implementation, you'd fetch the actual C file content
-            // For demo, show placeholder
             const modal = document.getElementById('codeModal');
             document.getElementById('modalTitle').innerHTML = `Program ${num} Source Code`;
             document.getElementById('modalCode').innerHTML = `// Program ${num}: ${programs[num-1].title}\n// Full source code available in the downloaded ZIP file\n// File: ${num}.c\n\n#include <stdio.h>\n\nint main() {\n    // Complete code in downloaded files\n    printf("Program ${num} executed successfully!\\n");\n    return 0;\n}`;
@@ -767,11 +765,11 @@
             }, 3000);
         }
         
-        function downloadDocx() {
-            // Direct link to the DOCX file on GitHub
-            const docxUrl = "https://github.com/tanvir-ahamed04/sadiya/blob/main/C_Programming_Lab_Report_20260515_023907.docx?raw=true";
-            window.open(docxUrl, '_blank');
-            showToast("📄 Downloading Lab Report...");
+        // NEW: Download ZIP report using the provided GitHub link
+        function downloadZipReport() {
+            const zipUrl = "https://github.com/tanvir-ahamed04/sadiya/blob/main/For%20sadiya%20.zip?raw=true";
+            window.open(zipUrl, '_blank');
+            showToast("📦 Downloading ZIP Report...");
         }
         
         // ZIP creation for all C files
@@ -846,7 +844,7 @@ gcc program.c -o program
 - GCC Compiler
 - Standard C libraries
 
-For complete lab report with flowcharts and analysis, download the DOCX file.
+For complete lab report with flowcharts and analysis, download the ZIP file.
 `;
             zip.file("README.txt", readme);
             
@@ -900,3 +898,4 @@ For complete lab report with flowcharts and analysis, download the DOCX file.
     </script>
 </body>
 </html>
+```
